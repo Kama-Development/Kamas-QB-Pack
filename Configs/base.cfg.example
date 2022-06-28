@@ -1,0 +1,46 @@
+# Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+
+# MySQL string
+set mysql_connection_string "mysql://root:@localhost/qbcore-pack"
+
+exec Configs/resource.cfg
+
+# A comma-separated list of tags for your server.
+# For example:
+# - sets tags "drifting, cars, racing"
+# Or:
+# - sets tags "roleplay, military, tanks"
+sets tags "default"
+
+# A valid locale identifier for your server's primary language.
+# For example "en-US", "fr-CA", "nl-NL", "de-DE", "en-GB", "pt-BR"
+sets locale "nl-NL" 
+sets Discord "http://discord.gg/UMdhNN9hK2"
+
+# please DO replace root-AQ on the line ABOVE with a real language!
+ 
+# Set your server's hostname
+sv_hostname "Kama's Development - Visit our Discord to find some awesome people."
+sv_master1 ""
+sets sv_projectName "Kama's Development - Visit our Discord to find some awesome people."
+sets sv_projectDesc "Working to make the community better."
+load_server_icon "servericon.png"
+
+# Add system admins
+add_ace group.admin command allow # allow all commands
+add_ace group.admin command.quit deny # but don't allow quit
+add_principal identifier.steam:YOURSTEAMIDHERE group.admin # Kamatcho
+
+# Hide player endpoints in external log output.
+sv_endpointprivacy true
+
+# Server player slot limit (must be between 1 and 32, unless using OneSync)
+set gamename rdr3
+set sv_enforceGameBuild 1436
+sv_maxclients 10
+
+# License key
+set sv_licenseKey "YOUR CFX LICENSE KEY HERE"
+set steam_webApiKey "YOUR STEAM WEB API KEY HERE"
